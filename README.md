@@ -1,41 +1,43 @@
 # Explore-Weather-Trends
 Udacity Data Analyst Degree - Project I
 
-## Overview
-Outline
+## Outline
 1. To extract city list data with SQL query statement “SELECT * FROM city_list”
 2. Shenzhen is the closest big city to where I live
 3. To extract Shenzhen’s city level data with SQL statement “SELECT * FROM city_data WHERE city='Shenzhen'” and export the extracted results to CSV
 4. To extract global data with SQL statement “SELECT * FROM global_data” and export the extracted results to CSV
 5. For average temperature data in both CSV files, create a new column to calculate moving average temperature to make it easier to observe the trends when it be shown in Charts
 
-## What Software Do I need?
-To complete this project, I required the following softwares:
-- SQL
-- Excel
+![capture](https://github.com/andrewyfcheung/Explore-Weather-Trends/blob/master/Shenzhen%20data%20screenshot.PNG)<br>
 
-## Extracting Data
-To start I wrote an SQL query to retrieve all the temperature data from:
-- Local Database (Shenzhen)
-- Global Database
+![capture](https://github.com/andrewyfcheung/Explore-Weather-Trends/blob/master/Global%20data%20screenshot.PNG)<br>
 
-Upon retrieving the data, it was extracted on a CSV file for further evaluation.
+6. Visualize the data using Excel
 
-## Data Selection & Manipulation
-Once the data has been extracted on CSV, it was possible to further evaluate the data on Excel. To provide a more accurate and useful dataset for comparison a range of the common years only was chosen.
-
-Moreover, due to fluctuations in yearly averages, the data was evaluated considering moving averages (7-years) to provide smoother results during data visualization. 
-
-## Data Visualization
-Once the dataset was ready, it was time to plug n play. The first chart shows a comparison between the global and local temperature set across the years.<br>
-
-![capture](https://user-images.githubusercontent.com/43564654/46089107-dd90c700-c1be-11e8-9ecd-429f31039f3c.PNG)<br>
-
-The second plot shows the global average temperature range across all the years to view a trend for the entire dataset.<br>
-
-![capture2](https://user-images.githubusercontent.com/43564654/46089105-dcf83080-c1be-11e8-829d-e2f34ae21327.PNG)<br>
+![capture](https://github.com/andrewyfcheung/Explore-Weather-Trends/blob/master/Global%20vs%20Shenzhen%207-year%20moving%20average%20temperature%20line%20graph.PNG)<br>
 
 ## Observations
-- Shenzhen's weather has been warmer than the global average in the past couple hunder years.
-- A significant rise in the yearly average temperature can be observed in Abu Dhabi in the past couple of decades.
-- The yearly average temperature seems to be increasing abnormally on a global scale in the last 3-4 decades. 
+1. Average global temperature is increasing over time, and so is Shenzhen’s temperature. Average global temperature increases from 7.96 in 1846 to 9.57 in 2013, whereas average Shenzhen temperature increases from 21.30 in 1846 to 22.02 in 2013.
+2. In terms of level of increment, average global temperature increases at a faster rate over time as compared with Shenzhen. Based on 1), average global temperature is increasing at 20.2% from 1846 to 2013, whereas average Shenzhen temperature is increasing at 3.3% from 1846 to 2013.
+3. Average global temperature is increasing steadily from 1846 to 2013, which could be partially explained by the industrial revolution of the western countries back in the 19th century. Average Shenzhen temperature remained stable from 1846 to 1940 and is increasing steadily since then. This could be partially explained by the recovery of China post WWII since the CCP’s reign.
+4. Below formula is used to measure how strong a relationship between two variables:
+
+![capture](https://github.com/andrewyfcheung/Explore-Weather-Trends/blob/master/Formula.PNG)<br>
+X Values (Global temperature) 
+Σ = 1483.3 Mean = 8.525 
+Σ(X - Mx)2 = SSx = 38.183 
+
+Y Values (Shenzhen temperature)
+Σ = 3728.97 Mean = 21.431 
+Σ(Y - My)2 = SSy = 45.486 
+
+X and Y Combined 
+N = 174 
+Σ(X - Mx)(Y - My) = 28.346 
+
+R Calculation 
+r = Σ((X - My)(Y - Mx)) / √((SSx)(SSy)) 
+r = 28.346 / √((38.183)(45.486)) = 0.6802
+The correlation coefficient between global and Shenzhen temperature trends is 0.6802 which indicates strong positive relationship among them.
+
+In conclusion, we can depict that the global temperature is increasing steadily from 1846 to 2013 and Shenzhen temperature is also demonstrating similar pattern but at a slower rate during the same period.
